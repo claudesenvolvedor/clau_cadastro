@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="https://www.portalwebtec.com.br/meu_formulario/css/style.css"
+        media="screen">
+
+    <title>Cadastro de Candidato</title>
+
+    <script src="https://www.portalwebtec.com.br/meu_formulario/js/valida_cpf2.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+
+</head>
+
+<body>
+
+    <div>
+        <h1 id="titulo">Cadastro de Candidato</h1>
+        <p id="subtitulo">Preencha seus dados. Os ítens com * (asterisco) são obrigatórios</p>
+        <br>
+    </div>
+
+    <form name="formCadastro" onsubmit="return validarFormulario()" method="post">
+
+        <fieldset class="agrupar">
+            <div class="campo">
+                <label for="nome"><strong>* Nome</strong></label>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" autofocus>
+            </div>
+
+            <div class="campo">
+                <label for="sobrenome"><strong>* Sobrenome</strong></label>
+                <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome">
+            </div>
+        </fieldset>
+
+        <div class="campo">
+            <label for="email"><strong>* E-mail</strong></label>
+            <input type="email" name="email" id="email" placeholder="Digite seu E-mail">
+        </div>
+
+        <div class="campo">
+            <label for="cpf"><strong>* CPF:</strong></label>
+            <input type="text" name="cpf" id="cpf" onkeydown="fMasc( this, mCPF );" required
+                placeholder="digite apenas números">
+            <input type="button" onkeydown="fMasc( this, mCPF );" onclick="validar()" value="verificar CPF">
+        </div>
+
+        <div class="campo">
+            <label for="rg"><strong>* RG:</strong></label>
+            <input type="text" name="rg" id="rg" required placeholder="digite apenas números">
+        </div>
+
+        <div class="campo">
+            <label for="telefone"><strong>Telefone residencial:</strong></label>
+            <input type="text" name="telefone" id="telefone" maxlength="10" placeholder="digite apenas números">
+        </div>
+
+        <div class="campo">
+            <label for="celular"><strong>* Telefone celular:</strong></label>
+            <input type="text" name="celular" id="celular" required maxlength="11" placeholder="digite apenas números">
+        </div>
+
+        <div class="campo">
+            <label><strong>Qual seu sexo?</strong></label>
+            <label>
+                <input type="radio" name="sexo" value="feminino" checked>Feminino
+            </label>
+
+            <label>
+                <input type="radio" name="sexo" value="masculino">Masculino
+            </label>
+
+            <label>
+                <input type="radio" name="sexo" value="outro">Outro
+            </label>
+        </div>
+
+        <div class="campo">
+            <label for="deficiencia"><strong>Pessoa com Deficiência?</strong></label>
+            <select id="deficiencia">
+                <option selected disabled value="">Selecione...</option>
+                <option>Não</option>
+                <option>Sim</option>
+            </select>
+        </div>
+
+        <div class="campo">
+            <label for="qualdeficiencia"><strong>Se houver: qual deficiência?</strong></label>
+            <input type="text" id="qualdeficiencia" name="qualdeficiencia"
+                placeholder="Se escolheu sim anteriormente. Preencha aqui sua deificiência">
+        </div>
+
+        <div class="container">
+            <h2><strong>Consulta CEP</strong></h2>
+
+            <div class="frm-row">
+                <label for="cep"><strong>* Cep</strong></label>
+                <input type="text" name="cep" id="cep" maxlength="8">
+            </div>
+
+            <div class="frm-row">
+                <label for="rua"><strong>* Rua</strong></label>
+                <input type="text" name="rua" id="rua" required>
+            </div>
+
+            <div class="campo">
+                <label for="numero"><strong>* Número da casa ou apartamento</strong></label>
+                <input type="text" name="numero" id="numero" size="10" maxlength="10"
+                    placeholder="número da casa ou apartamento">
+            </div>
+
+            <div class="campo">
+                <label for="complemento"><strong>Complemento</strong></label>
+                <input type="text" name="complemento" id="complemento" size="10" maxlength="10"
+                    placeholder="preencha somente se existir complemento de endereço">
+            </div>
+
+            <div class="frm-row">
+                <label for="bairro"><strong>* Bairro</strong></label>
+                <input type="text" name="bairro" id="bairro" required>
+            </div>
+
+            <div class="frm-row">
+                <label for="cidade"><strong>* Cidade</strong></label>
+                <input type="text" name="cidade" id="cidade" required>
+            </div>
+
+            <div class="frm-row">
+                <label for="estado"><strong>* Estado</strong></label>
+                <input type="text" name="estado" id="estado" required>
+            </div>
+        </div>
+
+        <fieldset class="agrupar">
+            <div id="check">
+                <label><strong>Escolha suas habilidades profissionais:</strong></label><br><br>
+
+                <input type="checkbox" id="tecnologia1" name="tecnologia1" value="HTML">
+                <label for="tecnologia1"> HTML</label>
+                <input type="checkbox" id="tecnologia2" name="tecnologia2" value="CSS">
+                <label for="tecnologia2"> CSS</label>
+                <input type="checkbox" id="tecnologia3" name="tecnologia3" value="JavaScript">
+                <label for="tecnologia3"> JavaScript</label>
+                <input type="checkbox" id="tecnologia4" name="tecnologia4" value="PHP">
+                <label for="tecnologia4"> PHP</label>
+                <input type="checkbox" id="tecnologia5" name="tecnologia5" value="C#">
+                <label for="tecnologia5"> C#</label>
+                <input type="checkbox" id="tecnologia6" name="tecnologia6" value="Python">
+                <label for="tecnologia6"> Python</label>
+                <input type="checkbox" id="tecnologia7" name="tecnologia7" value="Java">
+                <label for="tecnologia7"> Java</label>
+            </div>
+        </fieldset>
+
+        <div class="campo">
+            <br>
+
+            <label for="experiencia"><strong>Conte-nos um pouco de suas Experiências Profissionais:</strong></label>
+            <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia">Escreva aqui</textarea>
+        </div>
+
+        <button class="botao" type="submit" onsubmit="validarFormulario()">Enviar Cadastro</button>
+    </form>
+
+
+
+    <div>
+
+        <footer id="footer">
+            <p>
+                Formação Trilha Preparatória do Itaú Tech 5ª etapa
+            </p>
+
+            <address>
+                <p>
+                    Para tirar qualquer dúvida envie um e-mail para: <a
+                        href="mailto:claudesenvolvedor@gmail.com">claudesenvolvedor@gmail.com</a><br>
+                </p>
+
+                <p>
+                    <img id="logo" src="https://www.portalwebtec.com.br/meu_formulario/img/logo_linkedin.png"
+                        alt="logo do linkedin" />
+                    <a id="linkedin" href="https://www.linkedin.com/in/claudeci-alves-pinheiro-355a8a21b/"
+                        target="_blank">Visite meu perfil no LINKEDIN</a>
+                </p>
+            </address>
+            <p>
+                Claudeci Alves Pinheiro
+                <br>
+                Todos os Direitos Reservados &#0169;
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://www.portalwebtec.com.br/meu_formulario/js/validar_formulario.js"></script>
+
+    <script src="https://www.portalwebtec.com.br/meu_formulario/js/consulta-endereco.js"></script>
+
+    <script src="https://www.portalwebtec.com.br/meu_formulario/js/consulta-cep.js"></script>
+
+    <script src="https://www.portalwebtec.com.br/meu_formulario/js/mascarar.js"></script>
+
+</body>
+
+</html>
