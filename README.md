@@ -38,7 +38,7 @@ Criar um formulário de cadastro pessoal em Html utilizando recursos de JavaScri
 
 Por ser uma página destinada ao cadastro pessoal e que é indispensável a inserção de dados os ítens de cunho de identificação e localização do usuário são obrigatórios
 
-Obrigatórios: Dados Pessoais: Nome/ Sobrenome/ E-mail/ CPF/ RG/ Telefone Celular/ Cep/ Rua/ Número da residência/ Cidade/ Estado 
+Obrigatórios: Dados Pessoais: Nome/ Sorbrenome/ E-mail/ CPF/ RG/ Telefone Celular/ Cep/ Rua/ Número da residência/ Cidade/ Estado 
 
 #Acessibilidade
 
@@ -133,4 +133,6 @@ A Raquel Barradas pelo workshop sobre dicas para o dia da apresentação e entre
 
 Aos professores da Gama Academy: Izidro/ JC pelos tutoriais em áudio e vídeo/ e especialmente ao professor Ricardo Alexandre pelas mentorias
 
+Meu muito obrigado a todos!
+Claudeci Alves Pinheiro
 Manaus, 24 de Outubro de 2021.
